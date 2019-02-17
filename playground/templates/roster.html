@@ -1,0 +1,23 @@
+<html>
+{% extends 'layout.html' %}
+{% block body %}
+<body>
+  {% if gradeview == 1 %}
+    {% for i in class_roster %}
+      <div><p> Name: <b>{{i[0]}}</b> Grade: <b> {{i[1]}} </b> </p>
+    {% endfor %}
+
+  {% elif gradeview == 2  %}
+    {% for i in class_roster %}
+      <div><p> Name: <b>{{i[0]}}</b> Standing: <b> {{i[2]}}</b> </p>
+    {% endfor %}
+
+  {% elif gradeview == 0 %}
+    {% for i in class_roster %}
+      <div><p> Name: <b>{{i[0]}}</b> Grade: <b> {{i[1]}} </b> Standing: <b>{{i[2]}}</b></p>
+    {% endfor %}
+  {% endif %}
+
+</body>
+{% endblock %}
+</html>
